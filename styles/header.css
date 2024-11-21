@@ -1,0 +1,328 @@
+/* header 영역
+   모든 부분을 가로로 정렬하기 위해 display flex, flex-direction:row를 사용하고
+   동일하게 떨어뜨리기 위해, space-between을 사용
+   헤더 부분의 높이는 60px
+   top, left, right을 사용하여 위치 조정
+   z-index를 높게 두어 페이지 스크롤을 해도 video 부분이 밑으로 갈 수 있도록 설정
+    */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  height: 60px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 300;
+
+  background-color: white;
+}
+
+/* 왼쪽 부분 
+    너비는 185px로 두고,
+    안에 요소들을 일렬로 정렬시키기 위해 display flex와 center 요소들을 사용*/
+.left-section {
+  width: 185px;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 맨 왼쪽에 있는 세 줄 모양 아이콘
+   img 크기를 24px로 지정하고, padding 지정 후, youtube 로고와의 위치를 떨어뜨림
+   햄버거 아이콘 모양에 cursor를 올렸을 때, 마우스 모양 바뀜
+   색깔 전환할 때 자연스럽게 하기 위해 transition 사용 */
+.hamburger-icon {
+  height: 24px;
+
+  margin-left: 17px;
+  margin-right: 17px;
+
+  padding: 7px;
+  /* hover 했을 때를 대비해서 border를 둥글게 설정 */
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+/* 햄버거 아이콘에 hover 했을 시, 배경색 */
+.hamburger-icon:hover {
+  background-color: rgba(219, 216, 216, 0.5);
+}
+
+/* youtube 로고 아이콘 사이즈 설정 */
+.youtube-logo-icon {
+  height: 21px;
+}
+
+/* 중간 부분 */
+/* 중간 부분에 있는 요소들(검색창, 검색 버튼, 음성 검색 버튼)을 일렬로 나타내기 위해 display flex
+   가운데로 나타내기 위해 align center 사용
+   flex 1을 사용함으로써, 양쪽에 있는 left , right section을 제외한 부분을 차지 */
+.middle-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  flex: 1;
+
+  margin-left: 50px;
+  margin-right: 35px;
+
+  /* middle section 부분은 아무리 커져도 650px을 넘지 않게..*/
+  max-width: 650px;
+}
+
+
+/* 검색 창 조정 */
+.search-bar {
+  /* flex 1으로 둠으로써, 검색 창을 남는 부분에 다 채움 */
+  flex:1;
+  /* 페이지 사이즈를 줄일 때, 검색창을 0px 까지 줄일 수 있도록... */
+  width: 0;
+  height: 36px;
+  border: 1px solid rgb(192,192,192);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  font-size: 16px;
+
+  /* inset을 사용하여 검색 창 안쪽으로 shadow 만들기 */
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.15);
+
+  padding-left:15px;
+
+  /* 검색 버튼 부분과 겹쳐 보이지 않기 위해 z-index를 사용하여 우선순위 위로*/
+  z-index: 1;
+
+}
+/* 검색 창의 '검색' 이라는 글씨의 font-size 조정 */
+.search-bar::placeholder {
+  font-size: 15px;
+}
+
+/* 검색 창을 눌렀을 때, outline 설정 */
+.search-bar:focus{
+  outline: 1px solid rgb(79, 79, 248);
+}
+
+/* 검색 버튼 아이콘의 크기 조정 */
+.search-icon {
+  height: 27px;
+}
+
+/* 검색 버튼 조정 */
+.search-button {
+  height: 40px;
+  width: 65px;
+
+  background-color: rgb(240,240,240);
+  border: 1px solid rgb(192,192,192);
+
+  border-left-width: 0px;
+  
+  /* 검색 창 오른쪽 부분을 둥글게 만들기. */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  margin-left: 0px;
+  margin-right: 20px;
+
+  padding-right: 10px;
+
+  /* search-icon을 가운데 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* 검색 버튼에 마우스를 hover 했을 때, 배경색 전환 */
+.search-button:hover {
+  background-color: rgb(235, 233, 233);
+}
+
+/* 음성 검색 버튼 아이콘의 크기 조정 */
+.voice-search-icon {
+  height: 24px;
+}
+
+/* 음성 검색 버튼 조정 */
+.voice-search-button{
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(248,248,248);
+
+  /* voice search icon 가운데 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* 음성 검색 버튼에 마우스를 hover 했을 때, 배경색 전환 */
+.voice-search-button:hover {
+  background-color: rgb(224, 222, 222);
+}
+
+
+
+/* 오른쪽 부분 
+  너비는 145px로 지정
+  아이콘들 일렬 정렬하기 위해 display flex, flex-direction row 사용
+  가운데 정렬을 위해서는 align, justify center 사용
+  flex-shrink를 사용하여 페이지 사이즈를 줄여도 변함없게*/
+.right-section {
+  width: 145px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-right: 46px;
+
+  flex-shrink: 0;
+}
+
+/* 업로드 아이콘 img 사이즈 조정하고, 동서남북 방향 padding 7px 씩 설정
+   hover시, 배경색 전환 부드럽게 하기 위해 transition 설정
+   마우스 모양 변경을 위해 cursor pointer 사용 */
+.upload-icon {
+  height: 24px;
+  
+  padding: 7px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+/* 업로드 img 부분에 마우스를 hover 하면 배경색 전환 */
+.upload-icon:hover {
+  background-color: rgba(219, 216, 216, 0.5);
+}
+
+/* 알림 아이콘 부분 사이즈 조정
+   hover 시, 배경색 전환을 부드럽게 하기 위해 transition 을 사용 */
+.notifications-icon {
+  height: 25px;
+
+  padding: 7px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.15s;
+}
+
+/* 알림 아이콘에 마우스 hover시, 배경색 전환 */
+.notifications-icon:hover {
+  background-color: rgba(219, 216, 216, 0.5);
+}
+
+/* 알림 아이콘 위에 9+ 라는 빨강 표시를 추가하기 위해 position을 relative로.. */
+.notifications-icon-container {
+  position: relative;
+  cursor: pointer;
+}
+
+/* 알림 9+ count 위치를 설정하기 위해 position을 absolute로 설정
+   top과 right를 사용하여 위치 조정
+   font 설정과 padding, border 설정 */
+.notifications-count {
+  position: absolute;
+  top: 5px;
+  right: -6px;
+
+  font-size: 12px;
+  font-family: Roboto, Arial;
+
+  background-color: rgb(200,0,0);
+  color: white;
+
+  padding: 1px 4px;
+
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+/* my-channel 아이콘 부분 사이즈 조정 */
+.my-channel-icon {
+  height: 32px;
+
+  margin-left: 10px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+/* 마우스를 hover 했을 시, 밑에 검색, 만들기 div 뜨게 만들기위해
+   position을 relative로 설정하여 밑에 만들 수 있게끔
+   그리고 위치를 일렬로 정렬하기 위해 display flex */
+.search-button-container,
+.voice-search-button-container,
+.upload-icon-container,
+.notifications-icon-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 밑에 나오는 글씨를 position absolute 로 설정하여 위치 조정 */
+.search-button-container .tooltip,
+.voice-search-button-container .tooltip,
+.upload-icon-container .tooltip,
+.notifications-icon-container .tooltip {
+  position: absolute;
+
+  bottom: -60px;
+
+  background-color: rgba(51, 50, 50, 0.65);
+  color: white;
+  
+  font-size: 12px;
+  font-family: Roboto, Arial;
+
+  border-radius: 5px;
+
+  padding: 8px 10px;
+
+  /* opacity를 0으로 둠으로써, hover를 했을 때 */
+  opacity: 0;
+
+  /* 밑에 만든 부분에 마우스를 올렸을 때, 나타나지 않게끔 */
+  pointer-events: none;
+
+  /* text 문자열이 너무 길어서 여러줄로 되는것을 방지, 1열로 */
+  white-space: nowrap;
+
+  transition: opacity 0.15s;
+}
+
+.search-button-container .tooltip {
+  left: 12px;
+}
+
+/* 각 버튼에 마우스를 hover를 했을 때, opacity를 1로 두면서,
+   투명했던 부분을 나타나게*/
+.search-button-container:hover .tooltip,
+.voice-search-button-container:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip {
+  opacity: 1;
+}

@@ -1,0 +1,13 @@
+/* 전체 margin을 0으로 두고 시작 */
+* {
+  margin: 0;
+}
+
+/* body 태그 안에 있는 모든 요소들의 font 종류 변경 */
+body {
+  font-family: Roboto, Arial;
+  padding-top: 139px;
+  padding-left: 100px;
+  padding-bottom: 60px;
+
+}

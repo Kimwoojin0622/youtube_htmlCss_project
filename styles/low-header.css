@@ -1,0 +1,54 @@
+/* header 밑에 만듦.
+   position은 fixed로 -> 페이지를 내려도 안움직이게 설정
+   높이는 70px로 설정하고, top left right을 이용하여 위치 설정
+   각 div를 일렬 배치하기 위해 display flex 사용하고,
+   가운데 정렬을 위해 align-items center 사용.
+   z-index를 header와 동일하게 300으로 두고, sidebar보단 낮게, video 부분보다는 높게 둠. */
+.low-header {
+  position: fixed;
+  height: 70px;
+  top: 55px;
+  left: 96px;
+  right: 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  z-index: 200;
+
+  background-color: white;
+}
+
+/* 전체, 게임, 음악, 라이브 ... 부분
+   transition을 통해 마우스를 hover 했을 시, 자연스럽게 색상 변경
+   flex-shrink를 통해서 페이지 사이즈를 줄여도 변함이 없게.*/
+.lheader-title-1,
+.lheader-title {
+  flex-shrink: 0;
+  font-family: Roboto, Arial;
+
+  background-color: rgb(245, 239, 239);
+  font-size: 14px;
+
+  margin-right: 12px;
+
+  padding: 8px 11px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+/* 전체 div 부분의 배경색은 검정색으로 */
+.lheader-title-1 {
+  background-color: black;
+  color: white;
+}
+
+/* 전체 div를 제외한 나머지 div에 마우스를 hover 했을 시, 배경색 전환*/
+.lheader-title:hover {
+  background-color: rgb(233, 229, 229);
+}

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- 전체적인 css -->
+  <link rel="stylesheet" href="styles/full.css"> 
+  <!-- 헤더 css (검색창) -->
+  <link rel="stylesheet" href="styles/header.css">
+  <!-- 두 번째 헤더 css (전체, 게임, 음악....) -->
+  <link rel="stylesheet" href="styles/low-header.css">
+  <!-- 사이드 css (홈, 탐색, 구독..) -->
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <!-- 영상 섹션 css -->
+  <link rel="stylesheet" href="styles/video.css">
+  <!-- 쇼츠 css -->
+  <link rel="stylesheet" href="styles/shorts.css">
+  
+</head>
+
+
+
+
+<body>
+  <!-- 헤더 부분 (검색 창) -->
+  <header class="header">
+
+    <!-- 검색 창 중, 왼쪽을 차지 / YouTube 로그와 햄버거 아이콘 -->
+    <div class="left-section">
+      <img class="hamburger-icon" src="icons/hamburger-menu.svg">
+      <a href="https://www.youtube.com/">
+        <img class="youtube-logo-icon" src="icons/youtube-logo.svg">
+      </a>
+    </div>
+    
+    <!-- 검색 창 중, 가운데를 차지 / 검색 창, 검색 버튼, 음성 검색 버튼 -->
+    <div class="middle-section">
+      <!-- 검색 창 -->
+      <input class="search-bar" type="text" placeholder="검색">
+      <!-- 검색 버튼 컨테이너 -->
+      <div class="search-button-container">
+        <button class="search-button">
+          <img class="search-icon" src="icons/search.svg">
+        </button>
+        <!-- 마우스를 hover 했을 때, 밑에 뜨게 -->
+        <div class="tooltip">검색</div>
+      </div>
+      <!-- 음성 검색 버튼 컨테이너 -->
+      <div class="voice-search-button-container">
+        <button class="voice-search-button">
+          <img class="voice-search-icon" src="icons/voice-search-icon.svg">
+        </button>
+        <!-- 마우스를 hover 했을 때, 밑에 뜨게 -->
+        <div class="tooltip">음성으로 검색</div>
+      </div>
+    </div>
+
+    <!-- 검색 창 중, 오른쪽을 차지 / 업로드 버튼, 알림 버튼, 내 채널 버튼 -->
+    <div class="right-section">
+      <!-- 업로드 아이콘 컨테이너 -->
+      <div class="upload-icon-container">
+        <img class="upload-icon" src="icons/upload.svg">
+        <!-- 마우스를 hover 했을 때, 밑에 뜨게 -->
+        <div class="tooltip">만들기</div>
+      </div>
+      <!-- 알림 창 아이콘 컨테이너 -->
+      <div class="notifications-icon-container">
+        <img class="notifications-icon" src="icons/notifications.svg">
+        <!-- 알림 창에 빨간색 부분 -->
+        <div class="notifications-count">9+</div>
+        <!-- 마우스를 hover 했을 때, 밑에 뜨게 -->
+        <div class="tooltip">알림</div>
+      </div>
+      <!-- 내 채널 img -->
+      <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dko%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Faccount_advanced%253Fhl%253Dko%26feature%3Dredirect_login&hl=ko&ifkv=ARpgrqdwm-MVti_T5R8tT_Ki77Wg63C0tPpkqiiF7yCwkVqvWqgxSiDXvwT_URNomLZMTB-_hQbd8g&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S151338623%3A1728390125669358&ddm=1">
+        <img class="my-channel-icon" src="channel-pictures/my-channel.jpg">
+      </a>
+
+    </div>
+  </header>
+
+  <!-- 두번 째 header (전체, 게임, 음악, 라이브, 믹스...) -->
+  <nav class="low-header">
+    <div class="lheader-title-1">전체</div>
+    <div class="lheader-title">게임</div>
+    <div class="lheader-title">음악</div>
+    <div class="lheader-title">라이브</div>
+    <div class="lheader-title">믹스</div>
+    <div class="lheader-title">스케치 코미디</div>
+    <div class="lheader-title">요리</div>
+    <div class="lheader-title">축구</div>
+    <div class="lheader-title">액션 어드벤처 게임</div>
+    <div class="lheader-title">반려동물</div>
+    <div class="lheader-title">애니메이션</div>
+    <div class="lheader-title">최근에 업로드된 영상</div>
+  </nav>
+
+  <!-- 여기는 사이드바 부분!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!-- 사이드 부분 / 홈, 탐색, 구독, YouTube music... -->
+  <nav class="sidebar">
+    <a class="home-link" href="https://www.youtube.com/">
+      <div class="sidebar-link">
+        <img class="home-icon" src="icons/home.svg">
+        <div class="sidebar-text">홈</div>
+      </div>
+    </a>
+
+    <a class="explore-link" href="https://www.youtube.com/shorts/_liwoKXVDoQ">
+      <div class="sidebar-link">
+        <img src="icons/shorts-logo.svg">
+        <div class="sidebar-text">Shorts</div>
+      </div>
+    </a>
+
+    <a class="subscriptions-link" href="https://www.youtube.com/feed/subscriptions">
+      <div class="sidebar-link">
+        <img src="icons/subscriptions.svg">
+        <div class="sidebar-text">구독</div>
+      </div>
+    </a>
+
+    <a class="originals-link" href="https://www.youtube.com/channel/UCqVDpXKLmKeBU_yyt_QkItQ">
+      <div class="sidebar-link">
+        <img src="icons/originals.svg">
+        <div class="sidebar-text">Originals</div>
+      </div>
+    </a>
+
+    <a class="youtube-music-link" href="https://www.youtube.com/musicpremium">
+      <div class="sidebar-link">
+        <img src="icons/youtube-music.svg">
+        <div class="sidebar-text">YouTube Music</div>
+      </div>
+    </a>
+
+    <a class="library-link" href="https://www.youtube.com/feed/downloads">
+      <div class="sidebar-link">
+        <img src="icons/library.svg">
+        <div class="sidebar-text">Library</div>
+      </div>
+    </a>
+  </nav>
+
+  <!-- 여기서 부터는 비디오 섹션 부분!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!-- 영상 부분, 썸네일, 영상 제목, 영상 시간, 조회수 -->
+  <main>
+    <!-- 영상 페이지 영역을 다 둘러싸고 있는 div -->
+    <section class="every-video-container">
+      <!-- 영상 하나하나의 영역을 둘러싸고 있는 div-->
+      <div class="video-container">
+        <!-- 썸네일을 둘러싸고 있는 div -->
+        <a class="video-link" href="https://www.youtube.com/watch?v=GM9NK4FIPFk">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-1.webp">
+            <div class="video-time">18:15</div>
+          </div>
+        </a>
+        <!-- user img와 제목, 유튜버 이름, 조회수 등을 둘러싸고 있는 div -->
+        <div class="video-description">
+          <a href="https://www.youtube.com/@%EA%B4%B4%EB%AC%BC%EC%A5%90%EC%9C%A0%ED%8A%9C%EB%B8%8C">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-1.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=GM9NK4FIPFk">
+              <p class="video-title">감수성 터지는 라인</p>
+            </a>
+            <!-- 멤버십이 v 표시가 있을 때.. -->
+            <a class="user-link" href="https://www.youtube.com/@%EA%B4%B4%EB%AC%BC%EC%A5%90%EC%9C%A0%ED%8A%9C%EB%B8%8C">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">괴물쥐 유튜브</p>
+                  <p class="video-user">괴물쥐 유튜브</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=GM9NK4FIPFk">
+              <p class="video-stats">조회수 4.9만회 &#183; 46분 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=ieB5G_sBZVY">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-2.webp">
+            <div class="video-time">11:52</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@NetflixKorea">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-2.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=ieB5G_sBZVY">
+              <p class="video-title">[미공개] "간귀 맞네" 백종원이 인정한 '간귀' VS 요리 경력 11년의 맛귀 '선경 롱게스트' &#124; 흑백요리사: 요리 계급 전쟁 &#124; 넷플릭스</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@NetflixKorea">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">Netflix Korea 넷플릭스 코리아</p>
+                  <p class="video-user">Netflix Korea 넷플릭스 코리아</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=ieB5G_sBZVY">
+              <p class="video-stats">조회수 41만회 &#183; 12시간 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=kbL-CNNoSkw">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-3.webp">
+            <div class="video-time">2:09</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@channelA-news">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-3.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=kbL-CNNoSkw">
+              <p class="video-title">[단독]달리는 열차서 본 北 철도...흔들흔들&#183;엉금엉금 / 채널A / 뉴스A</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@channelA-news">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">채널A News</p>
+                  <p class="video-user">채널A News</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=kbL-CNNoSkw">
+              <p class="video-stats">조회수 3만회 &#183; 3시간 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=-OB_tioLT7A">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-4.webp">
+            <div class="video-time">4:50</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@rookitsch">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-4.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=-OB_tioLT7A">
+              <p class="video-title">새로운 만남</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@rookitsch">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">루키치</p>
+                  <p class="video-user">루키치</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=-OB_tioLT7A">
+              <p class="video-stats">조회수 10만회 &#183; 6시간 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=cjn_2bN703k">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-5.webp">
+            <div class="video-time">6:11:11</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@longsukhan">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-5.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=cjn_2bN703k">
+              <p class="video-title">주인공한테 완전히 빙의해버린 과몰입 GTA 스토리 모드 ㅋㅋㅋㅋㅋㅋ [GTA5 스토리 모드] 3화</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@longsukhan">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">롱수칸</p>
+                  <p class="video-user">롱수칸</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=cjn_2bN703k">
+              <p class="video-stats">조회수 6.4만회 &#183; 8개월 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=b6tvG_Bqo34">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-6.webp">
+            <div class="video-time">38:47</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@BLUEBLUEKIMKIM">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-6.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=b6tvG_Bqo34">
+              <p class="video-title">[Playlist] 낫또맛 김치ㅣJ-POP 느낌 나는 한국노래</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@BLUEBLUEKIMKIM">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">김파란</p>
+                  <p class="video-user">김파란</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=b6tvG_Bqo34">
+              <p class="video-stats">조회수 11만회 &#183; 9개월 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=7-enHiHeKDg">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-7.webp">
+            <div class="video-time">12:50</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@hotrestaurant">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-7.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=7-enHiHeKDg">
+              <p class="video-title">흑백요리사 편의점 먹방!</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@hotrestaurant">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">핫식당</p>
+                  <p class="video-user">핫식당</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=7-enHiHeKDg">
+              <p class="video-stats">조회수 2.2만회 &#183; 1시간 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=X7_Xv06jfkE">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-8.webp">
+            <div class="video-time">20:57</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@%ED%8C%8C%EC%B9%B4">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-8.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=X7_Xv06jfkE">
+              <p class="video-title">핸들이 고장난 트럭</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@%ED%8C%8C%EC%B9%B4">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">PAKA</p>
+                  <p class="video-user">PAKA</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=X7_Xv06jfkE">
+              <p class="video-stats">조회수 46만회 &#183; 2일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=RDlEhNqFPUU">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-9.webp">
+            <div class="video-time">15:14</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@workman">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-9.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=RDlEhNqFPUU">
+              <p class="video-title">카메라 꺼져도 계속 먹는 히밥의 프로 정신 &#124; 워크돌 &#124; 엔믹스 해원</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@workman">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">워크맨-Workman</p>
+                  <p class="video-user">워크맨-Workman</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=RDlEhNqFPUU">
+              <p class="video-stats">조회수 436만회 &#183; 4개월 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=vc7EewRQvKg">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-10.webp">
+            <div class="video-time">7:25</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@red12734">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-10.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=vc7EewRQvKg">
+              <p class="video-title">마블의 현재 상황</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@red12734">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">빨강도깨비</p>
+                  <p class="video-user">빨강도깨비</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=vc7EewRQvKg">
+              <p class="video-stats">조회수 17만회 &#183; 4일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=9-81PSdgQIc">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-11.webp">
+            <div class="video-time">22:35</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@gamst6217">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-11.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=9-81PSdgQIc">
+              <p class="video-title">감스트 맨유vs토트넘 3대0 패배.. 브페 퇴장까지 최악의 경기</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@gamst6217">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">감스트GAMST</p>
+                  <p class="video-user">감스트GAMST</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=9-81PSdgQIc">
+              <p class="video-stats">조회수 124만회 &#183; 8일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=AVCbT2e_Ico">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-12.webp">
+            <div class="video-time">32:57</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@ChimChakMan_Plus">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-12.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=AVCbT2e_Ico">
+              <p class="video-title">여러분 저 멘사예요</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@ChimChakMan_Plus">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">침착맨 플러스</p>
+                  <p class="video-user">침착맨 플러스</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=AVCbT2e_Ico">
+              <p class="video-stats">조회수 12만회 &#183; 8일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=serLZ2xXExM">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-13.webp">
+            <div class="video-time">1:01</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@MBCNEWS11">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-13.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=serLZ2xXExM">
+              <p class="video-title">[투데이 와글와글] 길이 3미터 '대왕오징어', 일본서 산 채로 발견 (2022.04.25/뉴스투데이/MBC)</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@MBCNEWS11">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">MBCNEWS</p>
+                  <p class="video-user">MBCNEWS</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=serLZ2xXExM">
+              <p class="video-stats">조회수 272만회 &#183; 2년 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=h2S6qfFLSPI">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-14.webp">
+            <div class="video-time">15:57</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@bdns">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-14.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=h2S6qfFLSPI">
+              <p class="video-title">SNL 호스트 문상훈이랑 SNL 단체 관람하는 빠더너스</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@bdns">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">빠더너스 BDNS</p>
+                  <p class="video-user">빠더너스 BDNS</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=h2S6qfFLSPI">
+              <p class="video-stats">조회수 24만회 &#183; 3일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=4mRae9N2pU4">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-15.webp">
+            <div class="video-time">12:42</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@jocoding">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-15.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=4mRae9N2pU4">
+              <p class="video-title">웹개발 이렇게 쉬었나? 웹사이트 7분만에 개발하고 실전 배포하기</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@jocoding">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">조코딩 JoCoding</p>
+                  <p class="video-user">조코딩 JoCoding</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=4mRae9N2pU4">
+              <p class="video-stats">조회수 58만회 &#183; 2년 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=sehQiF_pWig">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-16.webp">
+            <div class="video-time">23:14</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@1983dk">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-16.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=sehQiF_pWig">
+              <p class="video-title">영화 《조커: 폴리 아 되》 후기 &#124; 스포 없음</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@1983dk">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">김단군</p>
+                  <p class="video-user">김단군</p>
+                </div>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=sehQiF_pWig">
+              <p class="video-stats">조회수 17만회 &#183; 6일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=tYEkU0i9Sbk">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-17.webp">
+            <div class="video-time">19:30</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@%EC%9D%B4%EC%84%9D%ED%98%84">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-17.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=tYEkU0i9Sbk">
+              <p class="video-title">암컷 소리 1인자</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@%EC%9D%B4%EC%84%9D%ED%98%84">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">이석현</p>
+                  <p class="video-user">이석현</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=tYEkU0i9Sbk">
+              <p class="video-stats">조회수 4.2만회 &#183; 2일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------ -->
+
+      <div class="video-container">
+        <a class="video-link" href="https://www.youtube.com/watch?v=J6WdALiHPzY">
+          <div class="thumbnail-container">
+            <img class="thumbnail" src="thumbnails/thumbnail-18.webp">
+            <div class="video-time">13:50</div>
+          </div>
+        </a>
+        <div class="video-description">
+          <a href="https://www.youtube.com/@_matdictator">
+            <div class="user-img-box">
+              <img class="user-img" src="channel-pictures/channel-18.jpg">
+            </div>
+          </a>
+
+          <div class="description-box">
+            <a class="video-link" href="https://www.youtube.com/watch?v=J6WdALiHPzY">
+              <p class="video-title">흑백요리사에서 나왔던 히든천재님의 알리오올리오 심층분석</p>
+            </a>
+            <a class="user-link" href="https://www.youtube.com/@_matdictator">
+              <div class="membership-user">
+                <div class="video-user-name">
+                  <p class="video-user-floating">맛수령</p>
+                  <p class="video-user">맛수령</p>
+                </div>
+                <p class="v">✓</p>
+              </div>
+            </a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=J6WdALiHPzY">
+              <p class="video-stats">조회수 33만회 &#183; 13일 전</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 여기서 부터 쇼츠 부분!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <section class="shorts-section">
+      <!-- 쇼초 img와 p태그 부분 -->
+      <div class="shorts-header">
+        <img src="icons/shorts-logo.svg">
+        <p>Shorts</p>
+      </div>
+      
+      <!-- 쇼츠 동영상 큰 틀 -->
+      <div class="every-shorts-video-container">
+        <!-- 쇼츠 각 동영상 틀 -->
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/2488s2TB_T4">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-1.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/2488s2TB_T4">
+              <p class="shorts-video-text">러닝 동호회에 나가는 친누나의 수상한(?) 목적ㅋㅋㅋㅋㅋㅋ</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/2488s2TB_T4">
+              <p class="shorts-video-view">조회수 183만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/DlLs7bJQGdA">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-2.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/DlLs7bJQGdA">
+              <p class="shorts-video-text">서울대생이 본 특이한 사람은?</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/DlLs7bJQGdA">
+              <p class="shorts-video-view">조회수 64만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/1xr13rnYEg0">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-3.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/1xr13rnYEg0">
+              <p class="shorts-video-text">Call Duck &#124; Most Popular Pet Duck Breed</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/1xr13rnYEg0">
+              <p class="shorts-video-view">조회수 190만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/rLVDxfijY6g">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-4.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/rLVDxfijY6g">
+              <p class="shorts-video-text">트러플이 매우 쌌었던 이유?</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/rLVDxfijY6g">
+              <p class="shorts-video-view">조회수 103만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/wFJz1cNhUjM">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-5.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/wFJz1cNhUjM">
+              <p class="shorts-video-text">러시안 블루에 대해 알려줄게! #shorts</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/wFJz1cNhUjM">
+              <p class="shorts-video-view">조회수 16만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/cjOMT-oD-5g">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-6.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/cjOMT-oD-5g">
+              <p class="shorts-video-text">여친이 삐졌을 때 신호ㅋㅋㅋ</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/cjOMT-oD-5g">
+              <p class="shorts-video-view">조회수 88만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/5pVYRj6Y7Nw">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-7.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/5pVYRj6Y7Nw">
+              <p class="shorts-video-text">아이브 리허설 #shorts</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/5pVYRj6Y7Nw">
+              <p class="shorts-video-view">조회수 112만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/MDCwfpRKAbc">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-8.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/MDCwfpRKAbc">
+              <p class="shorts-video-text">지코바 사장님 레시피를 공개해서 죄송합니다 #shorts</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/MDCwfpRKAbc">
+              <p class="shorts-video-view">조회수 221만회</p>
+            </a>
+          </div>
+        </div>
+  
+        <!-- ----------------------------------------------------------------------------------------- -->
+  
+        <div class="shorts-video-container">
+          <a class="shorts-thumbnail-img" href="https://www.youtube.com/shorts/tMn6NGqBMPo">
+            <img class="shorts-video" src="shorts-thumbnails/shorts-thumbnail-9.webp">
+          </a>
+          <div class="shorts-video-text-container">
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/tMn6NGqBMPo">
+              <p class="shorts-video-text">고양이를 혼란에 빠뜨린 성대모사</p>
+            </a>
+            <a class="shorts-video-text-section" href="https://www.youtube.com/shorts/tMn6NGqBMPo">
+              <p class="shorts-video-view">조회수 877만회</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* 쇼츠 이미지가 있는 헤더 부분
+   img 와 p 태그 부분을 일렬로 하기 위해 flex, 가운데 정렬을 위해 align center
+  밑에 영상과 공간을 두기 위해 margin bottom */
+.shorts-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+/* 쇼츠 로고 사이즈 조정 */
+.shorts-header img {
+  height: 22px;
+  margin-right: 15px;
+}
+
+/* shorts 단어 설정 */
+.shorts-header p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* 쇼츠 부분 큰 틀
+   display를 grid로 하고 @media 쿼리에서 일렬로 정렬 
+   동영상 간 열 간격은 16px로 조정*/
+.every-shorts-video-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+  column-gap: 16px;
+  row-gap: 100px;
+
+  margin-right: 34px;
+}
+
+/* 1fr로 나눠진 구간들을 이미지가 100%로 채움으로써, 적절한 이미지 크기로 배치가 됨 */
+.shorts-video {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.shorts-video-text {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.shorts-video-view {
+  font-size: 14px;
+  color: gray;
+}
+
+/* a태그 밑줄 생긴거 제거 */
+.shorts-video-text-section {
+  text-decoration: none;
+  color: black;
+}
+
+/* a태그 방문 후, 사이트로 돌아왔을시, 밑줄 제거 */
+.shorts-video-text:visited {
+  text-decoration: none;
+  color: black;
+}
+
+/* p태그에 있는 내용이 2개 줄을 넘어갈 시, 나머지 부분은 ...으로 변경 */
+.shorts-video-text-container .shorts-video-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 미디어 쿼리 부분 */
+/* 페이지 width가 2077px 이상 시, 9개의 쇼츠 표시*/
+@media (min-width: 2077px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+/* 페이지 width가 1751px 이상 2076PX 이하 시, 8개의 쇼츠 표시*/
+@media (min-width: 1751px) and (max-width: 2076px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1425px) and (max-width: 1750px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1171px) and (max-width: 1424px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1099px) and (max-width: 1170px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+  }
+}
+
+@media (min-width: 792px) and (max-width: 1098px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 791px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 700px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .every-shorts-video-container {
+    grid-template-columns: 1fr;
+  }
+}
